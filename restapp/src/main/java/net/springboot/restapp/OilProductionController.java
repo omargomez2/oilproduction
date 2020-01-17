@@ -32,7 +32,6 @@ public class OilProductionController {
 
 	@PostMapping("/production")
     public OilProduction add(@RequestBody OilProduction oilProduction) {
-        //System.out.println(oilProduction.toString());
 		OilProduction op = service.create(oilProduction);
 		return op;
     }
