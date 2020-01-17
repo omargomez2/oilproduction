@@ -45,8 +45,6 @@ public class OilProduction {
 
 	public void setProduction(Integer production) {
 		this.production = production;
-	}
-	 
-	 
+	}	 
 	
 }

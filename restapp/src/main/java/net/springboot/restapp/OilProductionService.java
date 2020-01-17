@@ -29,7 +29,7 @@ public class OilProductionService {
 	        }
 	    }
 	     
-	    public OilProduction getProductionById(Long id) throws RecordNotFoundException {
+	public OilProduction getProductionById(Long id) throws RecordNotFoundException {
 	        Optional<OilProduction> oilProduction = repo.findById(id);
 	         
 	        if(oilProduction.isPresent()) {
@@ -37,9 +37,9 @@ public class OilProductionService {
 	        } else {
 	            throw new RecordNotFoundException("No record found for given id");
 	        }
-	    }
+	}
 	    
-	    public Result getAverageProduction() throws RecordNotFoundException {
+	public Result getAverageProduction() throws RecordNotFoundException {
 	        Optional<Result> avgProduction = repo.getAverageProduction();
 	         
 	        if(avgProduction.isPresent()) {
@@ -47,9 +47,15 @@ public class OilProductionService {
 	        } else {
 	            throw new RecordNotFoundException("No records found");
 	        }
-	    }
+	}
 	    
-	    //public Integer getAVG() {
-	    //    return repo.getAVGProduction();
-	    //}
+	
+	public OilProduction create(OilProduction oilProduction){
+		return repo.save(oilProduction);
+	}
+	
+	
+	//public Integer getAVG() {
+	//    return repo.getAVGProduction();
+	//}
 }
